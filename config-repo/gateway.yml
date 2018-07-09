@@ -1,38 +1,9 @@
 server:
   port: 8086
 spring:
-  cloud:
-    stream:
-      bindings:
-        sleuth:
-          destination: sleuth-jyl
-          binder: rabbit
-      binders:
-        rabbit:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: 11.11.136.141
-                port: 5672
-                username: guest
-                password: guest
-                listener:
-                  simple:
-                    concurrency: 2
-                    max-concurrency: 2
-
   application:
     name: gateway
-#  rabbitmq:
-#    host: 11.11.136.141
-#    port: 5672
-#    username: guest
-#    password: guest
-#    listener:
-#      simple:
-#        concurrency: 2
-#        max-concurrency: 2
+
   profiles:
     active: dev
   sleuth:
@@ -44,18 +15,18 @@ spring:
       percentage: 1
   redis:
     host: 11.11.136.121
-    port: 31924
-    password: cCA5Ba4IjrhLAEm0
+    port: 6379
+
     pool:
       max-active: 8
       max-idle: 8
       max-wait: -1
       min-idle: 0
   rabbitmq:
-    host: 11.11.136.141
+    host: 192.168.16.128
     port: 5672
-    username: guest
-    password: guest
+    username: admin
+    password: 1234
     listener:
       simple:
         concurrency: 2
@@ -142,8 +113,3 @@ eureka:
 #        refreshInterval: 60
 #        types:
 #          - url
----
-spring:
-  profiles: ocp
-server:
-  port: 8080
