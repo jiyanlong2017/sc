@@ -4,8 +4,6 @@ spring:
   application:
     name: gateway
 
-  profiles:
-    active: dev
   sleuth:
     integration:
       enabled: false
@@ -14,7 +12,7 @@ spring:
     sampler:
       percentage: 1
   redis:
-    host: 11.11.136.121
+    host: 11.11.136.128
     port: 6379
 
     pool:
